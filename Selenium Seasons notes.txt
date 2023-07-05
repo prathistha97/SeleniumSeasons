@@ -1,0 +1,397 @@
+Selenium Automation
+
+Selenium Season -1 
+
+is an API(collection of jars) which helps in automating Web Apps
+
+https://www.selenium.dev/
+
+Selenium automates browsers. That's it!
+
+JAVA API ( jdk lib - which is a collection of jars)
+
+Previous Releases
+Here you can find a more complete list of Selenium releases.
+
+3.141.59
+
+selenium-server-standalone-3.141.59.jar
+
+how to add Selenium jar to your Java Project ?
+
+right click on Project --> build  path --> configure build path
+--> click on Libraries --> click on classpath --> click on Add External jars
+now navigate to the location where you have jars  -> click open
+--> click apply --> click Apply and close
+
+-----------------------------------------------------------------
+
+org.openqa.selenium
+
+WebDriver(I)
+
+-ImeHandler(I)
+-Navigation(I)
+-Options(I)
+-TargetLocator(I)
+-Timeouts(I)
+-Window(I)
+
+Selenium WebDriver - Tool 
+
+-------------------------------------
+Launching of different browsers
+
+Chrome browser
+
+IllegalStateException
+Exception in thread "main" java.lang.IllegalStateException: 
+The path to the driver executable must be set by the 
+webdriver.chrome.driver system property;
+ for more information,
+ see https://github.com/SeleniumHQ/selenium/wiki/ChromeDriver. 
+ The latest version can be downloaded from http://chromedriver.storage.googleapis.com/index.html
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:847)
+
+
+go to the below link
+
+https://chromedriver.chromium.org/downloads
+
+
+Chrome is up to date
+Version 114.0.5735.199 (Official Build) (64-bit)
+
+chromedriver_win32.zip
+
+-----------------------------------------------------
+
+webdriver manager fat jar
+
+
+https://github.com/bonigarcia/webdrivermanager/releases
+
+webdrivermanager-5.4.0-fat.jar
+
+WebDriverManager.chromedriver().setup();
+
+??????????????????????????????????????????????????
+
+Write script to launch 
+
+1. firefox browser
+2. edge browser  using all three techinques 
+????????????????????????????????????????????????????
+
+
+org.openqa.selenium
+
+WebDriver(I)
+
+-ImeHandler(I)
+-Navigation(I)
+-Options(I)
+-TargetLocator(I)
+-Timeouts(I)
+-Window(I)
+
+
+3 things for methods to remember
+
+1.what is the return-type
+2.what arguments/paramaters it takes
+3.overall what does this method do 									
+									
+------------------------------------------
+WebDriver methods (13)
+
+close()
+findElement(By)
+findElements(By)
+get(String)
+getCurrentUrl()
+getPageSource()
+getTitle()
+getWindowHandle()
+getWindowHandles()
+manage()
+navigate()
+quit()
+switchTo()
+
+------------------------------------------------
+get(String):void
+
+this method will launch the web app whose URL is given as String
+-------------------------------------------------
+close():void
+
+this will close the only one window or tab on which webdriver focus is 
+
+will not kill the chromedriver.exe 
+
+------------------------------------------------------------
+quit():void 
+
+-this method will close all the tabs/windows opened during the WebDriver session
+- this will kill chromedriver.exe task or process running in background
+
+-------------------------------------------------------------------------
+getTitle():String
+
+this will return the title of window on which webdriver focus is 
+
+--------------------------------------------------------------------------
+
+getPageSource():String
+
+this will return the html source code  of window on which webdriver focus is 
+
+--------------------------------------------------------------------------
+
+getCurrentUrl():String
+
+this will returns url of window on which webdriver focus in form of string
+
+---------------------------------------------------------------------------
+getWindowHandle():String
+
+whenever a tab/window opened by webdriver , there will be unique ID given
+for that window/tab (which is in hexa decimal format)
+
+
+this will returns window ID of tab/windowon which webdriver focus in form of string
+
+e.g A05CE3AE38BCB2D66D860130BCF8585E
+
+---------------------------------------------------------------------------
+
+getWindowHandles(): Set<String>
+
+this will be discussed in selenium Season -2 (Multiple Window handling concept)
+
+------------------------------------------------------------------------------
+navigate(): Navigation
+
+to navigate the flow forward or back or refresh or launch app 
+
+back():void ==> driver.navigate().back();
+forward():void
+refresh():void
+to(String):void
+to(URL):void
+
+------------------------------------------------------------------------------
+manage(): Options
+
+
+manage method will help in dealing with cookies , windows (maximimising ,minimising etc),
+synchromnization(waits)
+
+
+addCookie(Cookie)
+deleteAllCookies()
+deleteCookie(Cookie)
+deleteCookieNamed(String)
+getCookieNamed(String)
+getCookies()
+ime()
+logs()
+timeouts()
+-------------
+window():Window(I)
+					
+fullscreen()
+getPosition()
+getSize()
+maximize()
+setPosition(Point)
+setSize(Dimension)
+------------------------------------------------------------------------
+
+switchTo(): TargetLocator	
+
+This will be used to swith the control/focus of WebDriver to other tab/window or frame or alerts
+
+activeElement()
+alert()
+defaultContent()
+frame(int)
+frame(String)
+frame(WebElement)
+parentFrame()
+window(String)				
+
+-----------------------------------------------
+
+findElement(By):WebElement
+findElements(By):List<WebElement>
+
+
+
+
+WebDriver Methods (cont ..)
+
+findElement(By):WebElement
+
+this method will focus on the Element which is meeting the locator strategy
+
+
+findElements(By):List<WebElement>
+
+this method will focus on the Elements which is meeting the locator strategy
+
+
+
+anything that is present in webpage is nothing but WebElement
+to find any WebElement we need to have some locator .
+**************************************
+Locators in WebDriver (8):
+**************************************
+className(String): By
+cssSelector(String): By
+id(String):By
+linkText(String):By
+name(String):By
+partialLinkText(String):By 
+tagName(String):By
+xpath(String):By
+
+===================
+HTML Terminology
+===================
+
+<tagName attribute1="value of attribute1"  attribute2="value of attribute2" ...
+         attributen="value of attributen"> 
+		 
+		 or
+		 
+<tagName attribute1="value of attribute1"  attribute2="value of attribute2" ...
+         attributen="value of attributen"> text on element </tagname>
+
+		 
+		 
+<input type="text" name="username" id="username" 
+       class="login_input" value="" fdprocessedid="vugwod">
+	   
+<a href="ForgotPassword.php">Forgot Password?</a>
+
+Based on HTML terminology we can classify locators as below
+
+i) based on attirbutes 
+
+id(String):By  ==> most prefered since this will be unique 
+
+name(String):By ==> second prefered locator
+
+className(String): By ==> not prefered for single weblement 
+
+ii) based on link text 
+
+
+the text present in between > and < for anchor tagNames
+
+linkText(String):By
+
+partialLinkText(String):By 
+
+these locators mainly meant for links 
+
+in HTML , the elements having tagname "a" are called links 
+
+a tagname is also called as anchor tagName
+
+
+
+iii) using tagName
+
+tagName(String):By 
+
+this is not prefered for single element , only used for multiple elements
+
+
+<img src="images/home.gif" width="118" height="23" border="0">
+
+
+iv) based on combination of tagName , attributes and text on elements
+
+xpath(String):By
+
+cssSelector(String): By
+
+//img[contains(@src,'home.gif')] ==> xpath
+
+body > div:nth-child(5) > table > tbody > tr > td:nth-child(2) > table > tbody > tr:nth-child(4) > td > table > tbody > tr:nth-child(1) > td:nth-child(2) > table > tbody > tr:nth-child(4) > td > a > img ==> css selector
+
+
+*************************************************
+WebElement Methods (16)
+*************************************************
+
+clear()
+click()
+findElement(By)
+findElements(By)
+getAttribute(String)
+getCssValue(String)
+getLocation()
+getRect()
+getSize()
+getTagName()
+getText()
+isDisplayed()
+isEnabled()
+isSelected()
+sendKeys(CharSequence...)
+submit()
+
+-----------------------------------------------------------------
+sendKeys(CharSequence...):void 
+CharSequence... is nothing but string 
+
+this method is used to type text on any WebElement 
+
+-----------------------------------------------------------------
+
+click():void 
+
+this method is used to click WebElement (like link or button etc ..)
+
+-----------------------------------------------------------------
+
+clear():void
+
+this method will clear the text present on textboxes 
+
+
+---------------------------------------------------------
+
+getText():String
+
+tis method will return the text present on WebElement in form of String
+
+-------------------------------------------------------
+
+getLocation(): Point
+
+this method is used to find the x,y coordinates of Left most corner WebElement
+getLocation().getX();
+getLocation().getY();
+
+--------------------------------------------------------
+
+getSize(): Dimension
+
+this method is used to get height and width of WebElement
+getSize().getHeight();
+getSize().getWidth();
+---------------------------------------------------------
+
+getRect():Rectangle
+
+this method is used to get both height and width and also
+x and y cordinates of WebElement
+
+
+--------------------------------------------------------
+
