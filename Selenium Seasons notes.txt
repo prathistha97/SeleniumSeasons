@@ -1,5 +1,7 @@
 Selenium Automation
 
+
+====================================
 Selenium Season -1 
 
 is an API(collection of jars) which helps in automating Web Apps
@@ -82,7 +84,6 @@ Write script to launch
 1. firefox browser
 2. edge browser  using all three techinques 
 ????????????????????????????????????????????????????
-
 
 org.openqa.selenium
 
@@ -226,8 +227,6 @@ window(String)
 
 findElement(By):WebElement
 findElements(By):List<WebElement>
-
-
 
 
 WebDriver Methods (cont ..)
@@ -394,4 +393,176 @@ x and y cordinates of WebElement
 
 
 --------------------------------------------------------
+
+getAttribute(String):String
+
+this method will retrive the attribute value in form of String 
+
+
+case 1 : attribute present with value 
+      o/p : value of attribute
+	  
+System.out.println( driver.findElement(By.linkText("New User Register Here")).getAttribute("href"));
+https://adactinhotelapp.com/Register.php
+			  
+
+case 2: attribute is not present 
+	  o/p : empty string
+	  o/p : null in some cases
+	  
+case 3: attribute is present and value not assigned 
+	  o/p : true 
+	  
+--------------------------------------------
+
+getCssValue(String):String	  
+	  
+this method is used to get CSS values of weblement ( color 	, font-weight , font-text etc)
+
+System.out.println(driver.findElement(By.className("build_title")).getCssValue("color"));
+
+rgba(153, 0, 0, 1)
+
+---------------------------------------------  
+getTagName():String
+
+this method will retrive the tagname of webelement
+
+----------------------------------------------
+isDisplayed(): boolean
+
+this method will return true if element is present in DOM and visible
+else false if present in DOM and not visible
+----------------------------------------------
+isEnabled():boolean
+
+is to check the element is interactable
+
+-----------------------------------------------
+isSelected():boolean
+
+this method is used to check an item/option is selected 
+from a dropdown/checkbox/radio button 
+
+-------------------------------------------------
+
+submit():void 
+
+this method will submit the form to server 
+
+---------------------------------------------------
+
+findElement(By):WebElement
+findElements(By):List<WebElement>
+ 
+
+====================================
+WebDriver(I) (13) - RemoteWebDriver(C)
+
+xpath
+
+WebElement(I) (16) - RemoteWebElement (C)
+
+13+8+16
+---------------------------------------------------
+Links Testing :
+
+tagname a 
+
+mandatory attribute : href
+
+--------------------------------------------------
+Dropdown Testing
+
+To select some item or option from Dropdown 
+
+i) using conventional way (using sendkeys)
+
+ii) Select Class
+
+org.openqa.selenium.support.ui
+
+constructor : Select(WebElement)
+
+Select s1=new Select(WebElement);
+
+selectByIndex(int):void  index to be calcuated manually , starts from zero (Not prefered)
+selectByValue(String)
+selectByVisibleText(String)
+
+??????????????????????????????????????
+
+launch https://www.facebook.com/
+
+Click "Create New Account"
+
+Select below date date using 2 ways 
+
+2 Oct 2000
+
+???????????????????????????????????????
+
+Xpath Writing Techniques
+
+xpath means XML path , it's a query lang to find XML nodes
+
+HTML is an implementation of XML 
+
+						Xpath
+
+
+		1)Absolute					2)Relative
+		
+Absolute : the path starts from root
+
+/html/body/table[2]/tbody/tr/td[2]/form/table/tbody/tr[2]/td[2]/input
+
+/html/body/table[2]/tbody/tr/td[2]/form/table/tbody/tr[2]/td[2]/input 
+
+root is hmtl tagName
+
+Relative : can be subset of absolute xpath or it can start at any from HTML page 
+
+==================
+HTML Terminology
+===================
+
+<tagName attribute1="value of attribute1"  attribute2="value of attribute2" ...
+         attributen="value of attributen"> 
+		 
+		 or
+		 
+<tagName attribute1="value of attribute1"  attribute2="value of attribute2" ...
+         attributen="value of attributen"> text on element </tagname>
+
+
+1) xpath based on tagname and attribute
+
+
+//tagname[@attribute='value of attribute']
+
+//input[@name='password']
+
+2) xpath based on tagname and linktext or text on WebElement
+
+
+//tagname[text()='text on element']
+
+//span[text()='Loans']
+
+
+3)xpath using contains function
+
+
+//tagname[contains(@attribute,'subset of value of attribute')]
+
+//img[contains(@src,'google-play')]
+
+
+	
+
+
+
+
+
 
