@@ -2,6 +2,11 @@ Selenium Automation
 
 
 ====================================
+
+Day 14 - 1st July Saturday
+
+----------------------------------------
+
 Selenium Season -1 
 
 is an API(collection of jars) which helps in automating Web Apps
@@ -85,6 +90,12 @@ Write script to launch
 2. edge browser  using all three techinques 
 ????????????????????????????????????????????????????
 
+
+====================================
+
+Day 15 - 3rd July Monday
+
+----------------------------------------
 org.openqa.selenium
 
 WebDriver(I)
@@ -228,6 +239,13 @@ window(String)
 findElement(By):WebElement
 findElements(By):List<WebElement>
 
+
+
+====================================
+
+Day 16 - 4th July Tuesday
+
+----------------------------------------
 
 WebDriver Methods (cont ..)
 
@@ -394,6 +412,13 @@ x and y cordinates of WebElement
 
 --------------------------------------------------------
 
+====================================
+
+Day 17 - 5th July Wednesday
+
+----------------------------------------
+
+
 getAttribute(String):String
 
 this method will retrive the attribute value in form of String 
@@ -457,6 +482,11 @@ findElements(By):List<WebElement>
  
 
 ====================================
+
+Day 18 - 6th July Thursday
+
+----------------------------------------
+
 WebDriver(I) (13) - RemoteWebDriver(C)
 
 xpath
@@ -559,10 +589,71 @@ HTML Terminology
 //img[contains(@src,'google-play')]
 
 
+====================================
+
+Day 19 - 7th July Friday
+
+----------------------------------------
+
+Assignment
+
+
+	//a[text()='Create new account']
+	
 	
 
+====================================
+
+Day 23 - 12th July Wednesday
+
+----------------------------------------
+	
+Selenium Season -2
 
 
+Links Testing
+
+findElement(By):WebElement
+findElements(By):List<WebElement>
 
 
+<a href="ForgotPassword.php">Forgot Password?</a>
+
+<a href="Register.php">New User Register Here</a>
+
+<a href="mailto:info@adactin.com">info@adactin.com</a>
+
+tagname a 
+
+StaleElementReferenceException:
+
+ org.openqa.selenium.StaleElementReferenceException:
+ 
+ stale element reference: stale element not found
+ 
+ DOM - Document Object Model 
+ 
+ this will tell how the HTML nodes are structured
+ 
+ Reason:
+ 
+ this exception occured due to change in DOM structure due to some action on Page 
+ 
+ Solution:
+ 
+ Reinitialize the WebElement or WebElement again after the DOM Structure
+
+
+???????????????????????????????????????????
+Assignment 1:
+
+in https://www.icicibank.com/ 
+find how many links are there and print them 
+
+Assignment 2:
+
+in https://www.icicibank.com/ 
+find how many links are there in "CALCULATORS" module and print href and 
+url 
+?????????????????????????????????????????????
 
