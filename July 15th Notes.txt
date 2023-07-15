@@ -1,0 +1,143 @@
+15th Jul
+
+Multiple Windows/tabs Handling 
+Frames Handling
+Alert Handling
+Screenshots
+
+switchTo():TargetLocator
+
+activeElement()
+alert():Alert
+defaultContent()
+frame(int)
+frame(String)
+frame(WebElement)
+parentFrame()
+window(String)
+
+if you want to switch to a new window or tab we should below statement
+
+driver.switchTo().window(String);
+
+here Stirng is the window id of the tab or window
+
+
+how to get window Id or Ids ?
+
+getWindowHandle():String
+getWindowHandles():Set<String>
+
+
+Adactin.com - Hotel Reservation System
+
+Adactin Hotel App - Apps on Google Play
+
+//span[text()='Games']/parent::span/parent::button
+
+or
+//span[text()='Games']/ancestor::button
+
+???????????????????????????????????????????
+Assignment 
+
+in https://www.livetech.in/
+click on "Facebook" and swith to that window and click on Sign up or sign in
+and switch back to LiveTech home page
+click on "Instagram" and swith to that window and click on Sign up or sign in
+and switch back to LiveTech home page
+click on "Twitter" and swith to that window and click on Sign up or sign in
+and switch back to LiveTech home page
+
+??????????????????????????????????????????????
+
+---------------------------------------------
+Frame Handling 
+
+frame(int) == here int is index , we should calculate index manually starting from zero
+frame(String) == Here String means only id and name attributes
+frame(WebElement) == 
+
+defaultContent() == this is to switch from any frame to page 
+parentFrame()
+
+<iframe src="/resources/demos/droppable/default.html" class="demo-frame"></iframe>
+
+org.openqa.selenium.NoSuchFrameException: No frame element found by name or id demo-frame
+
+
+--------------------------------------------------------
+
+??????????????????????????????????????????
+In
+
+https://www.selenium.dev/selenium/docs/api/java/index.html?overview-summary.html
+
+switch to packages frame and print all the links
+
+then switch to classes frame and print all the links
+
+?????????????????????????????????????????????????????
+
+----------------------------------------------
+Alerts Handling
+
+
+driver.switchTo().alert() >> Alert 
+
+
+accept():void  ==> to click "OK" button on Alert
+dismiss():void  ==> to click "Cancel" button on Alert
+getText():String ==> to get text present on alert 
+sendKeys(String):void  ==> to enter text in alert textbox
+
+
+????????????????????????????????????
+In https://demo.guru99.com/v4/
+
+use below credentials for login
+
+User ID :	mngr266311
+Password :	Admin123$
+
+click on "Delete Customer"
+
+Enter some "Customer ID	"
+
+Click "Submit"
+
+Validate alert text to be "Do you really want to delete this Customer?"
+
+and click "Ok"
+
+then again we get one more alter
+
+switch to alert 
+
+validate text to be "Customer does not exist!!"
+
+and click "ok'
+
+????????????????????????????????????????????????
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
