@@ -1,0 +1,122 @@
+LiveTech 0730 and 1030 AM Batch
+
+-------------------------------
+21st July Friday
+-------------------------------
+
+
+Waits in Selenium or Synchronization Techniques or timeouts etc 
+
+what is need of Synchronization ?
+
+our script will be very fast where as Applictaion can be slow because of different reasons
+
+- server can be slow 
+- internet is slow etc 
+
+org.openqa.selenium.NoSuchElementException: 
+no such element: 
+Unable to locate element: {"method":"xpath","selector":"//input[@name='firstname']"}
+
+
+NoSuchElementException:
+
+Reason 1 : if element is present but locator is given wrong and you are trying find 
+Solution : rectify the locator or correct the locator
+
+Reason 2 : if element is present yet loaded into DOM 
+Solution : we need to use Wait concept
+
+Reason 3: if element is present in DOM but it exists in some frame 
+Solution : switch to frame 
+
+ 
+ 
+ 1) Hard Wait :
+ 
+ Thread.sleep(2000);== > this is java concept ==> which is not prefered
+ 
+ if element is appeared within 2 seconds but you have used Thread.sleep(20000) ,
+ 
+ it will wait till 20 seconds 
+ 
+ 
+ 2)Implicit Wait 
+ 
+ in Selenium 3.141.59 
+ 
+ driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+ 
+ or 
+ 
+ Selenium 4 
+ 
+ driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+ 
+  
+ if element is present in DOM within 2 seconds then it will not wait remaining 18 seconds
+ 
+ this statement will be applied for all driver.findElement/s statements 
+ 
+ 3) Explicit Wait or Conditional Wait 
+ 
+ e.g 
+ 
+ https://bonigarcia.dev/selenium-webdriver-java/slow-calculator.html
+ 
+ 
+ WebDriverWait(C)
+ 
+ Constructors:
+ 
+ WebDriverWait(WebDriver, long) ; here first argument is driver object
+ 
+ second argument is long which represent always second 
+ 
+ ExpectedConditions (C):
+ 
+ many methods are present e.g 
+ 
+invisibilityOf(WebElement)
+invisibilityOfElementLocated(By)
+invisibilityOfElementWithText(By, String)
+isInvisible(WebElement)
+numberOfElementsToBe(By, Integer)
+numberOfElementsToBeLessThan(By, Integer)
+numberOfElementsToBeMoreThan(By, Integer)
+numberOfWindowsToBe(int) etc..
+
+ 
+ 4) Fluent Wait  
+ 
+ this is improved form of Explicit Wait
+ 
+ there are 3 improvements we can do for Explicit Wait 
+ 
+ i) WebDriver wait will always takes value which is in SECONDS , we can't change it to
+ mills or micros
+ 
+ withTimeout(Duration.ofSeconds(30))
+ 
+ 
+ ii) polling time is always 500 milli seconds which can't be changed
+ 
+ pollingEvery(Duration.ofMillis(300))
+ 
+ 
+ iii) no in built exception handling mechanism
+ 
+ ignoring(NoSuchElementException.class);
+ 
+ FluentWait<T>(C)
+ 
+ Constructors:
+ 
+ FluentWait(T)
+ 
+ T is generics  here T meant for WebDriver
+ 
+ 
+ 
+ 
+ 
